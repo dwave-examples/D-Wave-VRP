@@ -22,7 +22,9 @@ There are two input formats. You can find examples in the 'formats' directory.
 
 #### Full input
 
-The full input needs a graph file and a test file. In a graph file, you need to provide edges description: each line should contain two nodes' ids and cost. Cost is related to what you want to optimize, for example: distance or time. In a test file, you need to provide information about depots, destinations and vehicles. If you want to solve an instance of MDVRP (without capacities), you only need to provide depots' and destinations' ids and the number of vehicles. If you want to solve CMDVRP, you also need to provide destinations' weights and vehicles' capacities. 
+The full input needs a graph file and a test file. In a graph file, you need to provide edges description: each line should contain two nodes' ids and cost. Cost is related to what you want to optimize, for example: distance or time. In a test file, you need to provide information about depots, destinations and vehicles. In the first line, there should be the number of depots. In the second line, there should be the IDs of depots separated by spaces. In the next line, there should be the number (N) of IDs of nodes that should be visited. The next N lines should contain IDs of nodes that should be visited (potentially with weights of products that should be delivered, in the case of solving a "capacitated" version of the problem). The next line should contain the number of vehicles. In the case of solving a "capacitated" version of the problem, the next line should contain the capacities of vehices separated by a space. 
+
+If you want to solve an instance of MDVRP (without capacities), you only need to provide depots' and destinations' ids and the number of vehicles. If you want to solve CMDVRP, you also need to provide destinations' weights and vehicles' capacities. 
 
 If you have both files, you can use the function 'read_full_test' (from input.py) to obtain VRPProblem object. Note that if you want to solve MDVRP, you need to set the 'capacity' parameter to False.
 
